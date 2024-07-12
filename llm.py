@@ -25,7 +25,7 @@ model=HuggingFaceEndpoint(repo_id=repo_id,huggingfacehub_api_token=key,add_to_gi
 embeddings=HuggingFaceEmbeddings(model_name='sentence-transformers/all-MiniLM-L6-v2')
 index_name='lung'
 # os.environ['PINECONE_API_KEY'] = os.environ.get('pineapi')
-os.environ['PINECONE_API_KEY']=st.secrets['api']
+os.environ['PINECONE_API_KEY']=st.secrets['pineApi']
 
 
 
