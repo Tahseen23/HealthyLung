@@ -58,3 +58,5 @@ def generateRoadmap(stage,symptoms,time):
 
     response=rag_chain.invoke(query)
     return response
+
+print("done")
