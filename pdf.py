@@ -6,9 +6,6 @@ from reportlab.lib.utils import ImageReader
 from reportlab.lib.units import cm
 from reportlab.platypus import Paragraph
 import datetime
-from pdf2docx import Converter
-from docx2pdf import convert 
-import uuid
 import io
 
 
