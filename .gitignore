@@ -144,7 +144,6 @@ venv.bak/
 .mypy_cache/
 .dmypy.json
 dmypy.json
-lungcancer-9139e-firebase-adminsdk-y2opt-364eabe787.json
 # Pyre type checker
 .pyre/
 
