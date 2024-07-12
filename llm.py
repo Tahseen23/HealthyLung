@@ -4,7 +4,7 @@ from langchain.schema.runnable import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 from langchain.prompts import  ChatPromptTemplate
 from langchain.chains import HypotheticalDocumentEmbedder
-import streamlit as st
+
 
 
 from langchain.vectorstores import Pinecone
@@ -23,8 +23,7 @@ key=os.environ.get('api_key')
 model=HuggingFaceEndpoint(repo_id=repo_id,huggingfacehub_api_token=key,add_to_git_credential=True)
 embeddings=HuggingFaceEmbeddings(model_name='sentence-transformers/all-MiniLM-L6-v2')
 index_name='lung'
-# os.environ['PINECONE_API_KEY'] = os.environ.get('pineapi')
-os.environ['PINECONE_API_KEY'] = st.secrets['pineapi']
+os.environ['PINECONE_API_KEY'] = os.environ.get('pineapi')
 
 
 hyde_embeddings=HypotheticalDocumentEmbedder.from_llm(model,
