@@ -3,7 +3,7 @@ from firebase_admin import credentials,firestore,storage,auth
 import io
 
 if not firebase_admin._apps:
-    cred = credentials.Certificate(r"C:\Users\hp\Downloads\lungcancer-9139e-firebase-adminsdk-y2opt-396ea4bafe.json")
+    cred = credentials.Certificate(r"lungcancer-9139e-firebase-adminsdk-y2opt-364eabe787.json")
     firebase_admin.initialize_app(cred,{'storageBucket':'lungcancer-9139e.appspot.com'})
 db=firestore.client()
 
