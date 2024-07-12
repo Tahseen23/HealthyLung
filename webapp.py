@@ -27,13 +27,13 @@ with st.sidebar:
     generate=st.button("Generate PDF")
     reterive=st.button("Reterive")
 
+
 if reterive:
     if patientId:
         pdf=getPdf(f"evergreen{patientId}.pdf")
         show_pdf(pdf)
     else:
         st.warning("Please enter Patient Id ")
-
 
 
 

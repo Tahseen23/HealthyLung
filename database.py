@@ -1,5 +1,5 @@
 import firebase_admin
-from firebase_admin import credentials,firestore,storage
+from firebase_admin import credentials,firestore,storage,auth
 import io
 
 if not firebase_admin._apps:
@@ -37,3 +37,6 @@ def get_document(collectionName,documentID):
         return doc.to_dict()
     else:
         return "Not Found"
+
+    
+    
