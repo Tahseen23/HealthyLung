@@ -23,11 +23,12 @@ model=HuggingFaceEndpoint(repo_id=repo_id,huggingfacehub_api_token=key,add_to_gi
 embeddings=HuggingFaceEmbeddings(model_name='sentence-transformers/all-MiniLM-L6-v2')
 index_name='lung'
 os.environ['PINECONE_API_KEY'] = os.environ.get('pineapi')
-docsearch=Pinecone.from_existing_index(index_name,embeddings)
-reteriver=docsearch.as_retriever(search_kwargs={'k':3})
+
 hyde_embeddings=HypotheticalDocumentEmbedder.from_llm(model,
                                                     embeddings,
                                                     prompt_key="web_search")
+docsearch=Pinecone.from_existing_index(index_name,hyde_embeddings)
+reteriver=docsearch.as_retriever(search_kwargs={'k':10})
 
 template = """
 You are a lung cancer specialist. Your job is to provide a roadmap for the surgery and treatment of the patient. Junior doctors have already conducted imaging tests such as a chest CT scan and a PET scan, along with other lung cancer tests, and discussed the symptoms, medical history, and any other relevant information. The stage of lung cancer has already been determined and is provided below.
